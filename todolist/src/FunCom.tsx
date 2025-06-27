@@ -1,9 +1,8 @@
-function FunCom(){
+const FuncCom = () => {
     return(
-        <div>
-            함수형 컴포넌트랑께
-        </div>
+        <div>함수형 컴포넌트</div>
     )
 }
 
-export default FunCom;
+
+export default FuncCom;

@@ -1,20 +1,11 @@
 import './App.css';
-import React from 'react';
-import FunCom from './FunCom';
-function App() {
-  let title = "내일 할일"
+import TodoList from './TodoList';
 
-  const divStyle : React.CSSProperties = {
-    backgroundColor : 'yellowgreen',
-    color : 'blue',
-    fontSize : '2em',
-    textAlign : 'center'
-  };
-
+const App: React.FC = () =>{
   return(
-   <div>
-    <FunCom></FunCom>
-   </div>
+    <div>
+      <TodoList title = "오늘 할일"></TodoList>
+    </div>
   );
 }
 
