@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-
+import FunCom from './FunCom';
 function App() {
   let title = "내일 할일"
 
@@ -12,11 +12,9 @@ function App() {
   };
 
   return(
-    <div style={divStyle}>
-      <h1>
-        {title}
-      </h1>
-    </div>
+   <div>
+    <FunCom></FunCom>
+   </div>
   );
 }
 
