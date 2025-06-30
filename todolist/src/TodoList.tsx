@@ -10,8 +10,13 @@ type Todo = {
 
 
 const TodoList : React.FC = ()  =>{
-    const [todos, setTodos ] = useState<Todo[]>([{id: 1, text: "밥먹기", isChecked : true}, {id: 2, text: "오후 근로하기", isChecked : false}, {id: 3, text: "청소하기", isChecked : true}]);
+    const [todos, setTodos ] = useState<Todo[]>([{id: 1, text: "밥먹기", isChecked : false}, {id: 2, text: "오후 근로하기", isChecked : false}, {id: 3, text: "청소하기", isChecked : false}]);
 
+    const handleCheckboxChange = (itemId : number) =>{
+        setTodos((prevItems)=>prevItems.map((item)=>
+            item.id === itemId ? {...item, isChecked : !item.isChecked} : item))
+
+    }
 
     return(
         <div>
@@ -20,7 +25,10 @@ const TodoList : React.FC = ()  =>{
                 <div className='board'>
                     <ul>
                        {
-                        todos.map((todo)=>(<li key={todo.id}>{todo.text}</li>))
+                        todos.map((todo)=>(<li key={todo.id}>
+                            <input type="checkbox" onChange = {()=>{handleCheckboxChange(todo.id)}}></input>
+                            <span>{todo.isChecked ? <del>{todo.text}</del> : <span>{todo.text}</span>}</span>
+                            </li>))
                        }
                     </ul>
                 </div>
