@@ -10,7 +10,7 @@ type Todo = {
 
 
 const TodoList : React.FC = ()  =>{
-    const [todos, setTodos ] = useState<Todo[]>([{id: 1, text: "밥먹기", isChecked : false}, {id: 2, text: "오후 근로하기", isChecked : false}, {id: 3, text: "청소하기", isChecked : false}]);
+    const [todos, setTodos ] = useState<Todo[]>([{id: 1, text: "밥먹기", isChecked : true}, {id: 2, text: "오후 근로하기", isChecked : false}, {id: 3, text: "청소하기", isChecked : true}]);
 
     const handleCheckboxChange = (itemId : number) =>{
         setTodos((prevItems)=>prevItems.map((item)=>
@@ -19,15 +19,17 @@ const TodoList : React.FC = ()  =>{
     }
 
     return(
-        <div>
+        <div className='container mt-5'>
             <h1 className='titlebk'>오늘 할일</h1>
-            <div className='container'>
-                <div className='board'>
-                    <ul>
-                       {
-                        todos.map((todo)=>(<li key={todo.id}>
-                            <input type="checkbox" onChange = {()=>{handleCheckboxChange(todo.id)}}></input>
-                            <span>{todo.isChecked ? <del>{todo.text}</del> : <span>{todo.text}</span>}</span>
+            <div className='card'>
+                <div className='card-body'>
+                    <ul className='list-group'>
+                       {todos.map((todo)=>(
+                        <li key={todo.id} className='list-group-item d-flex justify-content-between align-items-center'>
+                            <div className='form-check'>
+                            <input type="checkbox" className = 'form-check-input' checked = {todo.isChecked} onChange = {()=>{handleCheckboxChange(todo.id)}}></input>
+                            <label className='form-check-label'>{todo.isChecked ? <del>{todo.text}</del> : <span>{todo.text}</span>}</label>
+                            </div>
                             </li>))
                        }
                     </ul>
