@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './App.css';
+import Timer from './Timer';
+import Clock from './Clock';
 
 
 type Todo = {
@@ -48,6 +50,8 @@ const TodoList : React.FC = ()  =>{
                     </ul>
                 </div>
             </div>
+            {/* <Timer></Timer> */}
+            <Clock></Clock>
         </div>
     )
 }
