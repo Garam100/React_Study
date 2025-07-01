@@ -27,6 +27,12 @@ const TodoList : React.FC = ()  =>{
         }
     }
 
+    const removeTodo = (id: number) =>{
+        setTodos(todos.filter((todo)=>{
+            return todo.id !== id;
+        }))
+    }
+
     return(
         <div className='container mt-5'>
             <h1 className='titlebk'>오늘 할일</h1>
@@ -45,6 +51,7 @@ const TodoList : React.FC = ()  =>{
                             <input type="checkbox" className = 'form-check-input' checked = {todo.isChecked} onChange = {()=>{handleCheckboxChange(todo.id)}}></input>
                             <label className='form-check-label'>{todo.isChecked ? <del>{todo.text}</del> : <span>{todo.text}</span>}</label>
                             </div>
+                            <button className='btn btn-danger' onClick={() => removeTodo(todo.id)}>삭제</button>
                             </li>))
                        }
                     </ul>
