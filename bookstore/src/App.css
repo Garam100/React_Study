@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+.carousel-item-custom{
+  background-color: #c6d6e0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 550px;
+}
+
+.carousel-item-custom img{
+  height: 500px;
+  object-fit: cover;
+}
