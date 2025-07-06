@@ -8,19 +8,19 @@ const MyCarousel : React.FC = () =>{
         <Carousel>
             <Carousel.Item>
                 <div className="carousel-item-custom">
-                    <img className = 'fixed-size-img' src='/imeages/book1.jpg' alt="부자가 되는 방법" />
+                    <img className = 'fixed-size-img' src='/imeages/1.jpg' alt="부자가 되는 방법" />
                 </div>
             </Carousel.Item>
 
             <Carousel.Item>
                 <div className="carousel-item-custom">
-                    <img className = 'fixed-size-img' src='/imeages/book1.jpg' alt="부자가 되는 방법" />
+                    <img className = 'fixed-size-img' src='/imeages/1.jpg' alt="부자가 되는 방법" />
                 </div>
             </Carousel.Item>
 
             <Carousel.Item>
                 <div className="carousel-item-custom">
-                    <img className = 'fixed-size-img' src='/imeages/book1.jpg' alt="부자가 되는 방법" />
+                    <img className = 'fixed-size-img' src='/imeages/1.jpg' alt="부자가 되는 방법" />
                 </div>
             </Carousel.Item>
         </Carousel>
