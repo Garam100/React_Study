@@ -21,8 +21,9 @@ const Content : React.FC = () =>{
             <Route path="/list" element = {<ListPage />}></Route>
             <Route path="/contact" element = {<ContactPage />}></Route>
             <Route path="/cart" element = {<CartPage />}></Route>
-            <Route path="/detail" element = {<DetailPage />}></Route>
+            <Route path="/detail/:id" element = {<DetailPage />}></Route>
             <Route path="/login" element = {<LoginPage />}></Route>
+            <Route path="*" element = {'페이지가 존재하지 않습니다.'}></Route>
            </Routes>
         </div>
     );
