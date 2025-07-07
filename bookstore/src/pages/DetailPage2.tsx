@@ -2,24 +2,19 @@ import type React from "react";
 import { useEffect, useState } from "react";
 
 const DetailPage2: React.FC = () =>{
-    const [count, setCount] = useState(0);
+    const [second, setSecond] = useState(0);
 
     useEffect(()=>{
-        console.log('componentMount')
-        return() =>{
-            console.log('componentUnmount')
-        };
+        const interval = setInterval(()=>{
+            setSecond(prevSeconds=>prevSeconds+1);
+        }, 1000);
+
+        return ()=> clearInterval(interval);
     },[]);
-
-    useEffect(() =>{
-        console.log('componentUpdate');
-
-    }, [count]);
 
     return(
         <div>
-            <p>Count</p>
-            <button onClick={()=>setCount(count+1)}>Click!!</button>
+            <h1>타이머: {second}초</h1>
         </div>
     )
  }
