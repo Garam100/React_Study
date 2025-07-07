@@ -1,12 +1,11 @@
 import { useState } from "react";
 import MyCarousel from "../component/Carousel";
 import bookdata, { type Book } from "../data/Bookdata";
-import {Link} from 'react-router-dom';
-import { Card, Col, Container, Row, Button } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import BookItem from "../component/BookItem";
 
 const Content : React.FC = () =>{
-    const [books,setBook] = useState<Book[]>(bookdata);
+    const [books, setBook] = useState<Book[]>(bookdata);
     console.log(books);
     
     return(
