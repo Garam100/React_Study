@@ -1,37 +1,27 @@
-import { Component, type ReactNode } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 
-interface LifeCycleExampleState {
-    count: number;
-}
+const DetailPage2: React.FC = () =>{
+    const [count, setCount] = useState(0);
 
-class DatailPage2 extends Component<{}, LifeCycleExampleState>{
-    constructor(props: {}){
-        super(props);
-        this.state = {count:0};
-        console.log('constructor');
-    }
+    useEffect(()=>{
+        console.log('componentMount')
+        return() =>{
+            console.log('componentUnmount')
+        };
+    },[]);
 
-    componentDidMount(): void {
-        console.log('mount');
-    }
+    useEffect(() =>{
+        console.log('componentUpdate');
 
-    componentDidUpdate(): void {
-        console.log('update')
-    }
+    }, [count]);
 
-    componentWillUnmount(): void {
-        console.log('unmount')
-    }
+    return(
+        <div>
+            <p>Count</p>
+            <button onClick={()=>setCount(count+1)}>Click!!</button>
+        </div>
+    )
+ }
 
-    render(){
-        return(
-            <div>
-                <p>Count: {this.state.count}</p>
-                <button onClick={()=>{ this.setState({count: this.state.count +1})}}>증가</button>
-            </div>
-        )
-    }
-    
-}
-
-export default DatailPage2;
+export default DetailPage2;
